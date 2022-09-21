@@ -1,0 +1,136 @@
+USE [bageldemo_new]
+GO
+/****** Object:  Table [dbo].[Users]    Script Date: 2022/5/30 上午 10:45:07 ******/
+DROP TABLE IF EXISTS [dbo].[Users]
+GO
+/****** Object:  Table [dbo].[Titles]    Script Date: 2022/5/30 上午 10:45:07 ******/
+DROP TABLE IF EXISTS [dbo].[Titles]
+GO
+/****** Object:  Table [dbo].[Roles]    Script Date: 2022/5/30 上午 10:45:07 ******/
+DROP TABLE IF EXISTS [dbo].[Roles]
+GO
+/****** Object:  Table [dbo].[Departments]    Script Date: 2022/5/30 上午 10:45:07 ******/
+DROP TABLE IF EXISTS [dbo].[Departments]
+GO
+/****** Object:  Table [dbo].[Departments]    Script Date: 2022/5/30 上午 10:45:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Departments](
+	[rowid] [int] IDENTITY(1,1) NOT NULL,
+	[mno] [nvarchar](50) NULL,
+	[mname] [nvarchar](50) NULL,
+	[remark] [nvarchar](250) NULL,
+ CONSTRAINT [PK_Departments] PRIMARY KEY CLUSTERED 
+(
+	[rowid] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Roles]    Script Date: 2022/5/30 上午 10:45:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Roles](
+	[rowid] [int] IDENTITY(1,1) NOT NULL,
+	[mno] [nvarchar](50) NULL,
+	[mname] [nvarchar](50) NULL,
+	[remark] [nvarchar](250) NULL,
+ CONSTRAINT [PK_Roles] PRIMARY KEY CLUSTERED 
+(
+	[rowid] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Titles]    Script Date: 2022/5/30 上午 10:45:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Titles](
+	[rowid] [int] IDENTITY(1,1) NOT NULL,
+	[mno] [nvarchar](50) NULL,
+	[mname] [nvarchar](50) NULL,
+	[remark] [nvarchar](250) NULL,
+ CONSTRAINT [PK_Titles] PRIMARY KEY CLUSTERED 
+(
+	[rowid] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Users]    Script Date: 2022/5/30 上午 10:45:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Users](
+	[rowid] [int] IDENTITY(1,1) NOT NULL,
+	[is_valid] [bit] NULL,
+	[mno] [nvarchar](50) NULL,
+	[mname] [nvarchar](50) NULL,
+	[pass_user] [nvarchar](50) NULL,
+	[role_no] [nvarchar](50) NULL,
+	[code_gender] [nvarchar](50) NULL,
+	[department_no] [nvarchar](50) NULL,
+	[title_no] [nvarchar](50) NULL,
+	[date_onboard] [date] NULL,
+	[date_leave] [date] NULL,
+	[email_contact] [nvarchar](50) NULL,
+	[tel_contact] [nvarchar](50) NULL,
+	[addr_contact] [nvarchar](250) NULL,
+	[code_valid] [nvarchar](50) NULL,
+	[remark] [nvarchar](250) NULL,
+ CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
+(
+	[rowid] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Departments] ON 
+GO
+INSERT [dbo].[Departments] ([rowid], [mno], [mname], [remark]) VALUES (1, N'A01', N'管理部', NULL)
+GO
+INSERT [dbo].[Departments] ([rowid], [mno], [mname], [remark]) VALUES (2, N'B01', N'財務部', NULL)
+GO
+INSERT [dbo].[Departments] ([rowid], [mno], [mname], [remark]) VALUES (3, N'C01', N'品管部', NULL)
+GO
+SET IDENTITY_INSERT [dbo].[Departments] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Roles] ON 
+GO
+INSERT [dbo].[Roles] ([rowid], [mno], [mname], [remark]) VALUES (1, N'User', N'使用者', NULL)
+GO
+INSERT [dbo].[Roles] ([rowid], [mno], [mname], [remark]) VALUES (2, N'Mis', N'管理者', NULL)
+GO
+INSERT [dbo].[Roles] ([rowid], [mno], [mname], [remark]) VALUES (3, N'Vendor', N'廠商', NULL)
+GO
+SET IDENTITY_INSERT [dbo].[Roles] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Titles] ON 
+GO
+INSERT [dbo].[Titles] ([rowid], [mno], [mname], [remark]) VALUES (1, N'T01', N'董事長', NULL)
+GO
+INSERT [dbo].[Titles] ([rowid], [mno], [mname], [remark]) VALUES (2, N'T02', N'總經理', NULL)
+GO
+INSERT [dbo].[Titles] ([rowid], [mno], [mname], [remark]) VALUES (3, N'T03', N'協理', NULL)
+GO
+INSERT [dbo].[Titles] ([rowid], [mno], [mname], [remark]) VALUES (4, N'T04', N'經理', NULL)
+GO
+INSERT [dbo].[Titles] ([rowid], [mno], [mname], [remark]) VALUES (5, N'T05', N'課長', NULL)
+GO
+INSERT [dbo].[Titles] ([rowid], [mno], [mname], [remark]) VALUES (6, N'T06', N'組長', NULL)
+GO
+INSERT [dbo].[Titles] ([rowid], [mno], [mname], [remark]) VALUES (7, N'T07', N'專員', NULL)
+GO
+SET IDENTITY_INSERT [dbo].[Titles] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Users] ON 
+GO
+INSERT [dbo].[Users] ([rowid], [is_valid], [mno], [mname], [pass_user], [role_no], [code_gender], [department_no], [title_no], [date_onboard], [date_leave], [email_contact], [tel_contact], [addr_contact], [code_valid], [remark]) VALUES (1, 1, N'Kelly', N'陳阿花', N'12345', N'Mis', N'F', N'A01', N'T07', CAST(N'2022-05-30' AS Date), NULL, N'kelly@gmail.com', N'1234567890', N'桃園市', N'', N'')
+GO
+INSERT [dbo].[Users] ([rowid], [is_valid], [mno], [mname], [pass_user], [role_no], [code_gender], [department_no], [title_no], [date_onboard], [date_leave], [email_contact], [tel_contact], [addr_contact], [code_valid], [remark]) VALUES (2, 1, N'Gordon', N'林阿呆', N'88888', N'User', N'M', N'B01', N'T06', CAST(N'2022-05-30' AS Date), NULL, N'gordon@gmail.com', N'8888888888', N'台北市', N'', N'')
+GO
+SET IDENTITY_INSERT [dbo].[Users] OFF
+GO
