@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbModelStoreContainer" CdmEntityContainer="dbEntities">
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="dbModel.Departments">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+          <ScalarProperty Name="mno" ColumnName="mno" />
+          <ScalarProperty Name="mname" ColumnName="mname" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="dbModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+          <ScalarProperty Name="mno" ColumnName="mno" />
+          <ScalarProperty Name="mname" ColumnName="mname" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Titles">
+      <EntityTypeMapping TypeName="dbModel.Titles">
+        <MappingFragment StoreEntitySet="Titles">
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+          <ScalarProperty Name="mno" ColumnName="mno" />
+          <ScalarProperty Name="mname" ColumnName="mname" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="dbModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+          <ScalarProperty Name="is_valid" ColumnName="is_valid" />
+          <ScalarProperty Name="mno" ColumnName="mno" />
+          <ScalarProperty Name="mname" ColumnName="mname" />
+          <ScalarProperty Name="pass_user" ColumnName="pass_user" />
+          <ScalarProperty Name="role_no" ColumnName="role_no" />
+          <ScalarProperty Name="code_gender" ColumnName="code_gender" />
+          <ScalarProperty Name="department_no" ColumnName="department_no" />
+          <ScalarProperty Name="title_no" ColumnName="title_no" />
+          <ScalarProperty Name="date_onboard" ColumnName="date_onboard" />
+          <ScalarProperty Name="date_leave" ColumnName="date_leave" />
+          <ScalarProperty Name="email_contact" ColumnName="email_contact" />
+          <ScalarProperty Name="tel_contact" ColumnName="tel_contact" />
+          <ScalarProperty Name="addr_contact" ColumnName="addr_contact" />
+          <ScalarProperty Name="code_valid" ColumnName="code_valid" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
